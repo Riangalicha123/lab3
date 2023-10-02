@@ -14,3 +14,5 @@ $routes->get('/main', 'UserController::main');
 $routes->get('/about', 'UserController::about');
 $routes->get('/contact', 'UserController::contact');
 $routes->get('/new', 'UserController::new');
+$routes->get('/product', 'UserController::product');
+$routes->get('/cart', 'UserController::cart');

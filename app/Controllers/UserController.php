@@ -3,12 +3,17 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\UserModel;
 
 class UserController extends BaseController
 {
     public function main()
     {
-        return view('main');
+        $main = new UserModel;
+        $data = [
+            'items' => $main->findAll()
+        ];
+        return view('main', $data);
     }
     public function about()
     {
@@ -21,5 +26,17 @@ class UserController extends BaseController
     public function new()
     {
         return view('new');
+    }
+    public function product()
+    {
+        $main = new UserModel;
+        $data = [
+            'items' => $main->findAll()
+        ];
+        return view('product', $data);
+    }
+    public function cart()
+    {
+        return view('cart');
     }
 }

@@ -1,9 +1,20 @@
+<style>
+  body.hold-transition.login-page {
+    /* Background color */
+    background-image: "<?=base_url();?>includes/assets/img/hero-bg.png";
+
+    /* Background image */
+    /* background-image: url('path/to/your/image.jpg'); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+  }
+</style>
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+      <a href="/main" class="h1"><b>Admin</b>LTE</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>
