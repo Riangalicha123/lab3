@@ -7,64 +7,95 @@ use App\Models\AdminModel;
 
 class AdminController extends BaseController
 {
-    public function login()
+    private $users;
+
+    function __construct(){
+        helper(['form']);
+        $this->users = new AdminModel();
+    }
+
+    public function index()
     {
+        //
+    }
+
+    public function loginPage(){
         helper(['form']);
         return view('adminlogg');
     }
-    
-    public function register()
-    {
+
+    public function signupPage(){
         helper(['form']);
-        $data =[];
         return view('adminreg');
     }
-    public function authreg()
-    {
+
+    public function register(){
         helper(['form']);
-        $rules =[
-            'username' => 'required|min_length[1]|max_length[25]',
-            'password' => 'required|min_length[1]|max_length[25]'
+        $rules = [
+            'username' => 'required|min_length[4]|max_length[50]',
+            'email' => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email]',
+            'password' => 'required|min_length[4]|max_length[50]',
+            'confirmpassword' => 'matches[password]'
         ];
-        if($this->validate($rules)){
-            $adminModel = new AdminModel();
+
+        if ($this->validate($rules)){
             $data = [
                 'username' => $this->request->getVar('username'),
-                'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
+                'email' => $this->request->getVar('email'),
+                'password' => password_hash($this->request->getVar('password'),PASSWORD_DEFAULT),
+                'user_type' => 'Customer'
             ];
-            $adminModel->save($data);
+            $this->users->insert($data);
             return redirect()->to('/login');
         }else{
             $data['validation'] = $this->validator;
-            echo view('adminreg', $data);
+            echo view('adminreg',$data);
         }
     }
-    public function authlogin()
-    {
+
+    public function Login(){
+        helper(['form']);
+        return view('adminlogg');
+    }
+
+    public function LoginAuth(){
         $session = session();
-        $main = new AdminModel();
-        $username = $this->request->getVar('username');
+        $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
-        $data = $main->where('username', $username)->first();
+
+        $data = $this->users->where('email',$email)
+                            ->first();
         if($data){
             $pass = $data['password'];
-            $authpass = password_verify($password, $pass);
-            if ($authpass){
+            $authenticatedPassword = password_verify($password,$pass);
+
+            if($authenticatedPassword){
                 $ses_data = [
-                    'id' => $data ['id'],
-                    'username' => $data['username'],
-                    'isLoggedIn' => true,
+                    'id' => $data['id'],
+                    'username' => $data['email'],
+                    'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/register');
+
+                if($data['user_type'] === 'Admins'){
+                    return redirect()->to('products');
+                }else if($data['user_type'] === 'Customer'){
+                    return redirect()->to('/');
+                }
             }else{
-                $session->setFlashdata('msg', 'Password is incorrect');
+                $session->setFlashdata('msg','Password is incorrect');
                 return redirect()->to('/login');
             }
         }else{
-            $session->setFlashdata('msg', 'There is no such Username');
+            $session->setFlashdata('msg','Email does not exist');
             return redirect()->to('/login');
         }
+    }
 
+    public function logout()
+    {
+        $session = session();
+        $session->destroy(); // Destroy the user's session
+        return redirect()->to('/'); // Redirect the user to the login page or any other page after logout
     }
 }

@@ -1,0 +1,129 @@
+CRITICAL - 2023-10-04 10:24:10 --> Invalid file: "dashboard/header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard/header.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard/header.php', [], true)
+ 3 APPPATH\Views\dashboard.php(3): view('dashboard/header.php')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LOGIN_REGISTER\\app\\Views\\dashboard.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('dashboard', [], true)
+ 7 APPPATH\Controllers\AdminDashController.php(11): view('dashboard')
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminDashController->dash()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashController))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+CRITICAL - 2023-10-04 12:10:43 --> Undefined variable $route
+in APPPATH\Config\Routes.php on line 22.
+ 1 APPPATH\Config\Routes.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', 'C:\\laragon\\www\\LOGIN_REGISTER\\app\\Config\\Routes.php', 22)
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\laragon\\www\\LOGIN_REGISTER\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+CRITICAL - 2023-10-04 12:11:35 --> Undefined variable $route
+in APPPATH\Config\Routes.php on line 22.
+ 1 APPPATH\Config\Routes.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $route', 'C:\\laragon\\www\\LOGIN_REGISTER\\app\\Config\\Routes.php', 22)
+ 2 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\laragon\\www\\LOGIN_REGISTER\\app\\Config\\Routes.php')
+ 3 SYSTEMPATH\CodeIgniter.php(787): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+ERROR - 2023-10-04 12:11:48 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'trydatabse', 3306, '', 0)
+#1 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\LOGIN_REGISTER\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\LOGIN_REGISTER\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\LOGIN_REGISTER\app\Controllers\UserController.php(14): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(919): App\Controllers\UserController->main()
+#8 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\LOGIN_REGISTER\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\LOGIN_REGISTER\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\LOGIN_REGISTER\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\LOGIN_REGISTER\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\laragon\www\LOGIN_REGISTER\app\Controllers\UserController.php(14): CodeIgniter\BaseModel->findAll()
+#6 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(919): App\Controllers\UserController->main()
+#7 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\LOGIN_REGISTER\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\LOGIN_REGISTER\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-10-04 12:11:48 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\UserController.php(14): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->main()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+CRITICAL - 2023-10-04 13:02:47 --> Undefined variable $validation
+in APPPATH\Views\admin\adminlogin\loginbody.php on line 21.
+ 1 APPPATH\Views\admin\adminlogin\loginbody.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'C:\\laragon\\www\\LOGIN_REGISTER\\app\\Views\\admin\\adminlogin\\loginbody.php', 21)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LOGIN_REGISTER\\app\\Views\\admin\\adminlogin\\loginbody.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('admin/adminlogin/loginbody.php', [], true)
+ 5 APPPATH\Views\adminlogg.php(5): view('admin/adminlogin/loginbody.php')
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\laragon\\www\\LOGIN_REGISTER\\app\\Views\\adminlogg.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('adminlogg', [], true)
+ 9 APPPATH\Controllers\AdminController.php(13): view('adminlogg')
+10 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->login()
+11 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+12 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+CRITICAL - 2023-10-04 14:36:08 --> Invalid file: "adminreg.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('adminreg.php')
+ 2 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('adminreg', [], true)
+ 3 APPPATH\Controllers\AdminController.php(13): view('adminreg')
+ 4 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->register()
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 6 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+ERROR - 2023-10-04 14:41:59 --> mysqli_sql_exception: Table 'ecom.product' doesn't exist in C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\LOGIN_REGISTER\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\LOGIN_REGISTER\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\LOGIN_REGISTER\app\Controllers\UserController.php(14): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(919): App\Controllers\UserController->main()
+#8 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#9 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\LOGIN_REGISTER\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\LOGIN_REGISTER\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2023-10-04 14:41:59 --> Table 'ecom.product' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 646.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `product`', [], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\UserController.php(14): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\UserController->main()
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 7 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')

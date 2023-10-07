@@ -1,0 +1,60 @@
+ERROR - 2023-10-06 13:26:44 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'ecom', 3306, '', 0)
+#1 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\laragon\www\LOGIN_REGISTER\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\LOGIN_REGISTER\system\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('galicharian09@g...', 'email', Array, NULL, 'email')
+#6 C:\laragon\www\LOGIN_REGISTER\system\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'galicharian09@g...', Array, Array)
+#7 C:\laragon\www\LOGIN_REGISTER\system\Controller.php(150): CodeIgniter\Validation\Validation->run()
+#8 C:\laragon\www\LOGIN_REGISTER\app\Controllers\AdminController.php(41): CodeIgniter\Controller->validate(Array)
+#9 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(919): App\Controllers\AdminController->register()
+#10 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#11 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\laragon\www\LOGIN_REGISTER\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 C:\laragon\www\LOGIN_REGISTER\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\laragon\www\LOGIN_REGISTER\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\LOGIN_REGISTER\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\laragon\www\LOGIN_REGISTER\system\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\LOGIN_REGISTER\system\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('galicharian09@g...', 'email', Array, NULL, 'email')
+#5 C:\laragon\www\LOGIN_REGISTER\system\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'galicharian09@g...', Array, Array)
+#6 C:\laragon\www\LOGIN_REGISTER\system\Controller.php(150): CodeIgniter\Validation\Validation->run()
+#7 C:\laragon\www\LOGIN_REGISTER\app\Controllers\AdminController.php(41): CodeIgniter\Controller->validate(Array)
+#8 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(919): App\Controllers\AdminController->register()
+#9 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+#10 C:\laragon\www\LOGIN_REGISTER\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\LOGIN_REGISTER\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\LOGIN_REGISTER\system\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-10-06 13:26:44 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(206): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(309): CodeIgniter\Validation\StrictRules\Rules->is_unique('galicharian09@gmail.com', 'email', [...], null, 'email')
+ 5 SYSTEMPATH\Validation\Validation.php(195): CodeIgniter\Validation\Validation->processRules('email', 'email', 'galicharian09@gmail.com', [...], [...])
+ 6 SYSTEMPATH\Controller.php(150): CodeIgniter\Validation\Validation->run()
+ 7 APPPATH\Controllers\AdminController.php(41): CodeIgniter\Controller->validate([...])
+ 8 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->register()
+ 9 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+10 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
+CRITICAL - 2023-10-06 13:29:59 --> Undefined array key "user_type"
+in APPPATH\Controllers\AdminController.php on line 79.
+ 1 APPPATH\Controllers\AdminController.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_type"', 'C:\\laragon\\www\\LOGIN_REGISTER\\app\\Controllers\\AdminController.php', 79)
+ 2 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\AdminController->LoginAuth()
+ 3 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\laragon\\www\\LOGIN_REGISTER\\public\\index.php')
